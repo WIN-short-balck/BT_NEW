@@ -1,10 +1,10 @@
 <?php
 /** The name of the database*/
-define( 'DB_NAME', 'news');
+define( 'DB_NAME', 'newss');
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'root');
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', '');
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
 /** port number of DB */

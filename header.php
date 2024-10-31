@@ -1,6 +1,18 @@
+<?php
+    require "config.php";
+    require "models/db.php";
+    require "models/items.php";
+    require "models/category.php";    
+
+    $item = new Item;
+    $category = new Category;
+
+    $getAllCates = $category->getAllCates();
+    $getAllItem = $item->getAllItems();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>BizNews - Free News Website Template</title>
@@ -88,18 +100,11 @@
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="category.html" class="nav-item nav-link">Category</a>
-                    <a href="single.html" class="nav-item nav-link">Single News</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="#" class="dropdown-item">Menu item 1</a>
-                            <a href="#" class="dropdown-item">Menu item 2</a>
-                            <a href="#" class="dropdown-item">Menu item 3</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
+                    <?php
+                        foreach($getAllCates as $key=>$value):
+                    ?>
+                    <a href="category.html" class="nav-item nav-link"><?php echo $value['name']?></a>
+                    <?php endforeach ?>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
                     <div class="input-group-append">
