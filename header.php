@@ -105,6 +105,7 @@
                     ?>
                     <a href="category.html" class="nav-item nav-link"><?php echo $value['name']?></a>
                     <?php endforeach ?>
+                    <form action="result.php" method="get">
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
                     <div class="input-group-append">
@@ -112,6 +113,7 @@
                                 class="fa fa-search"></i></button>
                     </div>
                 </div>
+                </form>
             </div>
         </nav>
     </div>

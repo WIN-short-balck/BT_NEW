@@ -8,7 +8,7 @@ class Category extends Db{
         return $items;
     }
 
-    public function getNameById(){
+    public function getNameById($cate_id){
         $sql = self::$connection->prepare("SELECT * From `categories` WHERE id = ?");
         $sql -> bind_param("i", $cate_id);
         $sql->execute();
